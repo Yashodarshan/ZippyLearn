@@ -1,0 +1,21 @@
+<template>
+    <div class="chatbot-container">
+        <div class="chat-header" onclick={toggleChat}>
+            <span>🤖 Need help?</span>
+            <button class="close-btn">X</button>
+        </div>
+        <div if:true={isOpen} class="chat-window">
+            <div class="chat-messages">
+                <template for:each={messages} for:item="msg">
+                    <div key={msg.id} class={msg.type}>
+                        <span>{msg.text}</span>
+                    </div>
+                </template>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message..." onkeyup={handleKeyUp}>
+                <button onclick={sendMessage}>Send</button>
+            </div>
+        </div>
+    </div>
+</template>

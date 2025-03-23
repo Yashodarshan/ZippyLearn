@@ -1,0 +1,27 @@
+.question-container {
+    text-align: center;
+    margin: 20px;
+}
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.card {
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #4CAF50, #388E3C);
+    color: white;
+    border-color: #388E3C;
+    box-shadow: 0 4px 10px rgba(72, 187, 120, 0.5);
+}

@@ -1,0 +1,26 @@
+<template>
+    <div class="ai-assist-container">
+        <div class="header">
+            <h2>Welcome to Your AI Assistant</h2>
+        </div>
+        
+        <div class="section">
+            <h3>Why are you here today?</h3>
+            <textarea class="user-input" placeholder="Tell AI your purpose here..."></textarea>
+            <button class="talk-button">🎙️ Talk to AI</button> &nbsp;
+            <button class="talk-button" onclick={openDashboard}>Personalize</button>
+        </div>
+        
+        <div class="section">
+            <h3>AI Voice Navigation</h3>
+            <p>Use voice commands to navigate through the app.</p>
+            <button class="navigate-button">🎤 Speak to Navigate</button>
+        </div>
+        
+        <div class="section">
+            <h3>Smart Adaptation</h3>
+            <p>AI learns your navigation speed & adjusts UI dynamically.</p>
+            <button class="adapt-button">🔄 Enable Smart Adaptation</button>
+        </div>
+    </div>
+</template>

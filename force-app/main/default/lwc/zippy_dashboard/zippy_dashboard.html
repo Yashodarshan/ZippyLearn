@@ -1,0 +1,103 @@
+<template>
+    <template lwc:if={showSpinner}>
+        <div class="loader-container">
+            <div class="loader-box">
+                <div class="spinner"></div>
+                <p class="loading-text">Please wait while we personalize your experience...</p>
+            </div>
+        </div>
+    </template>
+    <template lwc:else>
+        <div class="container">
+            <div class="sidebar">
+                <button class="accordion-header" data-id=0 onclick={showContent}>
+                    Dashboard
+                </button>
+                <template for:each={menuItems} for:item="menu">
+                    <div key={menu.id} class="accordion-item">
+                        <button class="accordion-header" data-id={menu.id}>
+                            {menu.title}
+                            <span class="arrow rotate" data-id={menu.id}>▼</span>
+                        </button>
+                        <div class="accordion-content open" data-id={menu.id} style="max-height: none;">
+                            <template for:each={menu.subItems} for:item="subItem">
+                                <div key={subItem.id} class="submenu-item" onclick={showContent} data-id={subItem.id}>
+                                    {subItem.label}
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div class="content" style="overflow-y:auto;">
+                <template lwc:if={showVideos}>
+                    <template lwc:if={hideUnlockBanner}>
+                        <c-zippy_video-grid class="dashclass dash-video"></c-zippy_video-grid>
+                    </template>
+                    <template lwc:else>
+                        <c-zippy_unlock-access></c-zippy_unlock-access>
+                    </template>
+                </template>
+                <template lwc:elseif={showLectures}>
+                    <template lwc:if={hideUnlockBanner}>
+                        <c-zippy_live-lectures class="dashclass dash-livelecture"></c-zippy_live-lectures>
+                    </template>
+                    <template lwc:else>
+                        <c-zippy_unlock-access></c-zippy_unlock-access>
+                    </template>
+                </template>
+                <template lwc:elseif={showQuizzes}>
+                    <template lwc:if={hideUnlockBanner}>
+                        <c-zippy_quiz class="dashclass dash-quiz"></c-zippy_quiz>
+                    </template>
+                    <template lwc:else>
+                        <c-zippy_unlock-access></c-zippy_unlock-access>
+                    </template>
+                </template>
+                <template lwc:elseif={showLeaderboard}>
+                    <template lwc:if={hideUnlockBanner}>
+                        <c-zippy_achievement-leaderboard class="dashclass dash-leaderboard"></c-zippy_achievement-leaderboard>
+                    </template>
+                    <template lwc:else>
+                        <c-zippy_unlock-access></c-zippy_unlock-access>
+                    </template>
+                </template>
+                <template lwc:elseif={showFriends}>
+                    <template lwc:if={hideUnlockBanner}>
+                        <c-zippy_friends class="dashclass dash-friends"></c-zippy_friends>
+                    </template>
+                    <template lwc:else>
+                        <c-zippy_unlock-access></c-zippy_unlock-access>
+                    </template>
+                </template>
+                <template lwc:elseif={showFeed}>
+                    <template lwc:if={hideUnlockBanner}>
+                        <c-zippy_chatter class="dashclass dash-chatter"></c-zippy_chatter>
+                    </template>
+                    <template lwc:else>
+                        <c-zippy_unlock-access></c-zippy_unlock-access>
+                    </template>
+                </template>
+                <template lwc:elseif={showClans}>
+                    <template lwc:if={hideUnlockBanner}>
+                        <c-zippy_clans class="dashclass dash-clans"></c-zippy_clans>
+                    </template>
+                    <template lwc:else>
+                        <c-zippy_unlock-access></c-zippy_unlock-access>
+                    </template>
+                </template>
+                <template lwc:elseif={showHackathons}>
+                    <template lwc:if={hideUnlockBanner}>
+                        <c-zippy_hackathons class="dashclass dash-hackathon"></c-zippy_hackathons>
+                    </template>
+                    <template lwc:else>
+                        <c-zippy_unlock-access></c-zippy_unlock-access>
+                    </template>
+                </template>
+                <template lwc:else>
+                    <c-zippy_progress-dashboard></c-zippy_progress-dashboard>
+                </template>
+            </div>
+        </div>
+    </template>
+</template>

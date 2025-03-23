@@ -1,0 +1,91 @@
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #4A90E2, #50C9C3);
+}
+
+.welcome-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.brand-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #34495E;
+    margin-bottom: 10px;
+}
+
+.welcome-message {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.cta-message {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-btn {
+    background: #2ECC71;
+    color: white;
+}
+
+.start-btn:hover {
+    background: #27AE60;
+}
+
+.skip-btn {
+    background: #E74C3C;
+    color: white;
+}
+
+.skip-btn:hover {
+    background: #C0392B;
+}
+
+.ai-btn {
+    background: #4d3ce7;
+    color: white;
+}
+
+.ai-btn:hover {
+    background: #be2bc0;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

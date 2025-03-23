@@ -1,0 +1,30 @@
+<template>
+    <div class="friends-container">
+        <h2>👥 My Network</h2>
+
+        <!-- Search Bar -->
+        <input type="text" class="search-box" placeholder="Search friends..." oninput={handleSearch}>
+
+        <!-- Friends Grid -->
+        <div class="friends-grid">
+            <template for:each={filteredFriends} for:item="friend">
+                <div key={friend.id} class="friend-card">
+                    <img src={friend.avatar} alt="Profile" class="friend-avatar">
+                    
+                    <div class="friend-info">
+                        <h3>{friend.name}</h3>
+                        <p class={friend.statusClass}>{friend.status}</p>
+
+                        <!-- Role Badge -->
+                        <template if:true={friend.role}>
+                            <span class={friend.roleClass}>{friend.role}</span>
+                        </template> &nbsp; &nbsp;
+
+                        <!-- Chat Button -->
+                        <button class="chat-button" onclick={handleChatClick}>💬 Request Chat</button>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

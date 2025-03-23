@@ -1,0 +1,32 @@
+<template>
+    <div class="chatter-container">
+        <h2>📢 Community Chatter</h2>
+
+        <!-- Post Input Box -->
+        <div class="post-box">
+            <textarea placeholder="What's on your mind?" value={newPost} oninput={handlePostChange}></textarea>
+            <button class="post-button" onclick={handlePost}>Post</button>
+        </div>
+
+        <!-- Feed List -->
+        <div class="feed">
+            <template for:each={posts} for:item="post">
+                <div key={post.id} class="feed-card">
+                    <img src={post.avatar} alt="User" class="user-avatar">
+                    <div class="feed-content">
+                        <h3>{post.user}</h3>
+                        <p>{post.message}</p>
+
+                        <!-- Reaction Buttons -->
+                        <div class="reaction-bar">
+                            <button onclick={handleReaction} data-id={post.id} data-reaction="❤️">❤️ {post.reactions.heart}</button>
+                            <button onclick={handleReaction} data-id={post.id} data-reaction="👍">👍 {post.reactions.like}</button>
+                            <button onclick={handleReaction} data-id={post.id} data-reaction="🔥">🔥 {post.reactions.fire}</button>
+                            <button onclick={handleReaction} data-id={post.id} data-reaction="😂">😂 {post.reactions.laugh}</button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

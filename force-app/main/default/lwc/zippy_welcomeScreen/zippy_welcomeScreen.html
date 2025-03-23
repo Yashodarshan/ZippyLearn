@@ -1,0 +1,27 @@
+<template>
+    <template lwc:if={showQuestionnare}>
+        <c-zippy_login-questionnare></c-zippy_login-questionnare>
+    </template>
+    <template lwc:else>
+        <template lwc:if={aiAssist}>
+            <c-zippy_ai-assistant></c-zippy_ai-assistant>
+        </template>
+        <template lwc:else>
+            <div class="welcome-container">
+                <div class="welcome-box">
+                    <h1 class="brand-name">Welcome to ZippyLearn</h1>
+                    <p class="welcome-message">
+                        Your personalized learning journey starts here. Discover courses, connect with peers, and achieve your goals faster. Please note that your activity would be tracked on this website. Proceed only if you consent to it.
+                    </p>
+                    <p class="cta-message">Would you like to answer 3 quick questions to personalize your view?</p>
+                    <div class="buttons-container">
+                        <button class="btn start-btn" onclick={startPersonalization}>Yes, Let's Go!</button>
+                        <button class="btn skip-btn" onclick={skipPersonalization}>Skip for Now</button>
+                    </div>
+                    <br>
+                    <button class="btn ai-btn" onclick={showAI}>Switch to AI assist</button>
+                </div>
+            </div>
+        </template>
+    </template>
+</template>

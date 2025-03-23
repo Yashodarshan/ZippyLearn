@@ -1,0 +1,167 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #005a9c;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+.brand {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.overlay {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    position: relative;
+}
+
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    position: relative;
+}
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+}
+
+.close-icon:hover {
+    color: #000;
+}
+
+.sso-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.google { background: #DB4437; color: white; }
+.facebook { background: #3B5998; color: white; }
+.linkedin { background: #0077B5; color: white; }
+.phone { background: #28A745; color: white; }
+.login-btn { background: #005a9c; color: white; padding: 12px; width: 100%; border: none; border-radius: 5px; cursor: pointer; }
+.or-separator { margin: 15px 0; font-weight: bold; color: #666; }
+.input-field { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; }
+.signup-text { margin-top: 10px; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-menu h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.dropdown-menu p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.dropdown-menu hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 10px 0;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dropdown-menu li:hover {
+    background: #f5f5f5;
+    border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+    .dropdown-menu {
+        width: 180px;
+    }
+}
+
+.searchicon{
+    margin-left: 5%;
+}
+
+.overlay2 {
+    position: fixed; /* Covers full screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dimmed background */
+    z-index: 1000; /* Ensures it's on top of everything */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.profile-menu {
+    position: absolute; /* Floats inside overlay */
+    background: white;
+    width: 250px;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    z-index: 1001; /* Ensures it's above overlay */
+}
+
+.profile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-menu li {
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.profile-menu li:hover {
+    background: #e3f2fd;
+}

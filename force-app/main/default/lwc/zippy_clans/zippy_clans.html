@@ -1,0 +1,43 @@
+<template>
+    <div class="team-up-container">
+        <h2>🤝 Team Up & Join Events</h2>
+
+        <!-- Create a Team Section -->
+        <div class="team-section">
+            <h3>Create Your Team</h3>
+            <input type="text" placeholder="Enter team name" value={teamName} oninput={handleTeamNameChange} />
+            <button class="create-team-button" onclick={createTeam}>Create Team</button>
+        </div>
+
+        <!-- Team Members List -->
+        <template if:true={teamCreated}>
+            <div class="team-list">
+                <h3>Team: {teamName}</h3>
+                <ul>
+                    <template for:each={teamMembers} for:item="member">
+                        <li key={member.id}>
+                            <img src={member.avatar} alt="User" class="member-avatar">
+                            <span>{member.name} <strong>({member.role})</strong></span>
+                        </li>
+                    </template>
+                </ul>
+                <button class="invite-button" onclick={inviteFriends}>Invite More Friends</button>
+            </div>
+        </template>
+
+        <!-- Available Events -->
+        <div class="events-section">
+            <h3>🎟️ Upcoming Events</h3>
+            <div class="event-grid">
+                <template for:each={events} for:item="event">
+                    <div key={event.id} class="event-card">
+                        <h4>{event.name}</h4>
+                        <p>{event.description}</p>
+                        <span>{event.type} | {event.date}</span>
+                        <button class="join-button" style="float: right;" data-id={event.id} onclick={joinEvent}>Join Event</button>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

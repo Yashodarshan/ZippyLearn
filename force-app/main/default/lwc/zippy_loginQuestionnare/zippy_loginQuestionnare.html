@@ -1,0 +1,14 @@
+<template>
+    <div class="quiz-container">
+        <template if:true={isTransitioning}>
+            <div class="fade-out">
+                <c-zippy_user-preferences question={currentQuestion.question} options={currentQuestion.options} onanswer={handleAnswer}></c-zippy_user-preferences>
+            </div>
+        </template>
+        <template if:false={isTransitioning}>
+            <div class="fade-in">
+                <c-zippy_user-preferences question={currentQuestion.question} options={currentQuestion.options} onanswer={handleAnswer}></c-zippy_user-preferences>
+            </div>
+        </template>
+    </div>
+</template>

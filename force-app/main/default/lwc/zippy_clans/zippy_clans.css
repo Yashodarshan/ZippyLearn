@@ -1,0 +1,108 @@
+.team-up-container {
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.team-section {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.team-section input {
+    width: 80%;
+    padding: 8px;
+    margin-right: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.create-team-button {
+    padding: 8px 12px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.team-list {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.team-list h3 {
+    text-align: center;
+}
+
+.team-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.team-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.member-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.invite-button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.events-section {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.event-card {
+    background: #ecf0f1;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.join-button {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

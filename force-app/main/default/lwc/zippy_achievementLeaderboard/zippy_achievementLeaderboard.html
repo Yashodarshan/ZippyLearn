@@ -1,0 +1,21 @@
+<template>
+    <div class="leaderboard-container">
+        <h2 class="leaderboard-title">🏆 Achievements Leaderboard</h2>
+        <div class="leaderboard-list">
+            <template for:each={leaders} for:item="leader">
+                <div key={leader.id} class="leaderboard-item">
+                    <span class="rank">#{leader.rank}</span>
+                    <img src={leader.avatar} alt="Avatar" class="avatar">
+                    <div class="leader-info">
+                        <h3 class="name">{leader.name}</h3>
+                        <p class="achievement">{leader.achievement}</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style={leader.progressStyle}></div>
+                        </div>
+                    </div>
+                    <span class="points">{leader.points} pts</span>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

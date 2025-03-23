@@ -1,0 +1,12 @@
+<template>
+    <div class="question-container">
+        <h2>{question}</h2>
+        <div class="cards-container">
+            <template for:each={options} for:item="option">
+                <div key={option.id} class={option.className} onclick={handleSelect} data-id={option.id}>
+                    <p onclick={handleSelect}>{option.label}</p>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

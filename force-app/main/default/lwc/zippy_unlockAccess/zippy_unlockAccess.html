@@ -1,0 +1,31 @@
+<template>
+    <template lwc:if={showUnlockBanner}>
+        <!--Unlock access by sign in / sign up-->
+        <div class="unlock-access-container">
+            <h2 class="unlock-access-title">🔒 Unlock Full Access to Personalized Learning</h2>
+            <p class="unlock-access-description">
+                Preview our content below. Sign up or log in to access your personalized learning path, track your progress, and join our community of learners.
+            </p>
+            
+            <div class="button-container">
+                <button class="signup-button">Sign Up Free</button>
+                <button class="login-button">Log In</button>
+            </div>
+            
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <h3>Introduction to AI</h3>
+                    <p>Preview lesson available</p>
+                </div>
+                <div class="preview-card">
+                    <h3>Data Science Basics</h3>
+                    <p>Preview lesson available</p>
+                </div>
+                <div class="preview-card">
+                    <h3>Web Development</h3>
+                    <p>Preview lesson available</p>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,30 @@
+<template>
+    <div class="live-lectures-container">
+        <h2>📅 Upcoming Live Lectures</h2>
+
+        <template if:true={lectures.length}>
+            <div class="lectures-grid">
+                <template for:each={lectures} for:item="lecture">
+                    <div key={lecture.id} class="lecture-card">
+                        <h3>{lecture.topic}</h3>
+                        <p><strong>Instructor:</strong> {lecture.instructor}</p>
+                        <p><strong>Date:</strong> {lecture.date}</p>
+                        <p><strong>Time:</strong> {lecture.time}</p>
+                        <p class={lecture.statusClass}>{lecture.status}</p>
+                        <lightning-button 
+                            label={lecture.buttonName}
+                            variant="brand" 
+                            data-status={lecture.statusClass} 
+                            onclick={handleJoin} 
+                            disabled={lecture.isNotLive}>
+                        </lightning-button>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <template if:false={lectures.length}>
+            <p>No upcoming live lectures at the moment.</p>
+        </template>
+    </div>
+</template>

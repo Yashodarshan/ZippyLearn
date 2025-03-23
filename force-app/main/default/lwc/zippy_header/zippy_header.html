@@ -1,0 +1,49 @@
+<template>
+    <div class="slds-grid">
+        <div class="slds-col slds-size_2-of-3">
+            <div class="header" ><!--onclick={gohome}-->
+                <h1 class="brand">ZippyLearn</h1>
+                <template lwc:if={showSearchIcon}>
+                    <lightning-icon icon-name="standard:search" onclick={openSearch} class="searchicon"></lightning-icon>
+                </template>
+                <template lwc:if={isSearchOpen}>
+                    <c-zippy_globalsearch onclosesearch={closeSearch} style="margin-top: 20%;"></c-zippy_globalsearch>
+                </template>
+            </div>  
+        </div>
+        <div class="header slds-col slds-size_1-of-3">
+            <template lwc:if={showUserData} >
+                <div onclick={toggleMenu}>
+                    Welcome Yash 🏅 27,900 points 
+                </div>
+            </template>
+            <template lwc:else>
+                <lightning-icon icon-name="action:user" size="small" onclick={toggleOverlay}></lightning-icon>
+                <div class="overlay" lwc:if={isOverlayVisible}>
+                    <div class="login-container">
+                        <div class="login-box">
+                            <span class="close-icon" onclick={closeLogin}>X</span>
+                            <button class="sso-btn google" onclick={autoFill}>Proceed with Google</button>
+                            <button class="sso-btn facebook" onclick={autoFill}>Proceed with Facebook</button>
+                            <button class="sso-btn linkedin" onclick={autoFill}>Proceed with LinkedIn</button>
+                            <button class="sso-btn phone" onclick={autoFill}>Continue using with Mobile number</button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+    <template if:true={menuOpen}>
+        <div class="overlay2" onclick={closeMenu}>
+            <div class="profile-menu dropdown-menu" onclick={stopPropagation} style="float: right; margin-right: 10%; margin-top: 5%">
+                <h3><b>Clan Name:</b> Neural Monarchs</h3>
+                <p><b>Clan Ranking :</b> 3</p>
+                <hr/>
+                <ul>
+                    <li onclick={viewProfile}>👤 View Profile</li>
+                    <li onclick={logout}>🚪 Logout</li>
+                </ul>
+            </div>
+        </div>
+    </template>
+</template>

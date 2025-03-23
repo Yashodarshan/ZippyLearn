@@ -1,0 +1,90 @@
+.goal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scrollable-box {
+    width: 400px;
+    height: 400px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.add-goal-card {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f9;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    border: 2px dashed #2196f3;
+}
+
+.add-goal-card:hover {
+    background: #e3f2fd;
+}
+
+.plus-icon {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2196f3;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    text-align: center;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.goal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.goal-card {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.goal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

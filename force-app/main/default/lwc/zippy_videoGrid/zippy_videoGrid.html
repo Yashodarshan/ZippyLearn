@@ -1,0 +1,35 @@
+<template>
+    <lightning-accordion allow-multiple-sections-open active-section-name="python">
+        <!-- Python Tutorials Section -->
+        <lightning-accordion-section name="python" label="Module 1 : Ace the coding interviews">
+            <lightning-button-menu slot="actions" alternative-text="Show menu" icon-size="x-small" menu-alignment="auto">
+                <lightning-menu-item value="New" label="Add to path"></lightning-menu-item>
+                <lightning-menu-item value="Edit" label="Unsubscribe"></lightning-menu-item>
+            </lightning-button-menu>
+            <div class="video-grid">
+                <template for:each={pythonVideos} for:item="video">
+                    <div key={video.id} class="video-container">
+                        <iframe width="100%" height="100%" src={video.src} frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </template>
+            </div>
+        </lightning-accordion-section>
+
+        <!-- Software Engineering Section -->
+        <lightning-accordion-section name="si" label="Module 2 : Product Management Framework">
+            <lightning-button slot="actions" menu-alignment="auto" label="Subscribe"></lightning-button>
+            <div class="video-grid">
+                <template for:each={siVideos} for:item="video">
+                    <div key={video.id} class="video-container">
+                        <iframe width="100%" height="100%" src={video.src} frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </template>
+            </div>
+        </lightning-accordion-section>
+
+        <!-- Software Engineering Section -->
+        <lightning-accordion-section name="unlock" label="Unlock premium content or Redeem points">
+            <c-zippy_locked-content-tile></c-zippy_locked-content-tile>
+        </lightning-accordion-section>
+    </lightning-accordion>
+</template>

@@ -1,0 +1,48 @@
+<template>
+    <div class="goal-container">
+        <div class="scrollable-box">
+            <div class="add-goal-card" onclick={handleOpenModal}>
+                <span class="plus-icon">+</span>
+                <p>Add New Goal</p>
+            </div>
+    
+            <template if:true={isModalOpen}>
+                <div class="modal-overlay" onclick={handleCloseModal}></div>
+                <div class="modal">
+                    <h2>{labelHeading}</h2>
+    
+                    <lightning-input type="text" name="title" label="Goal Title" value={newGoal.title} onchange={handleInputChange}></lightning-input>
+                    <lightning-input type="date" name="startDate" label="Start Date" value={newGoal.startDate} onchange={handleInputChange}></lightning-input>
+                    <lightning-input type="date" name="endDate" label="End Date" value={newGoal.endDate} onchange={handleInputChange}></lightning-input>
+                    <lightning-input type="number" name="dailyTime" label="Time Per Day (mins)" value={newGoal.dailyTime} onchange={handleInputChange}></lightning-input>
+    
+                    <div class="modal-actions">
+                        <lightning-button label="Cancel" onclick={handleCloseModal}></lightning-button>
+                        <lightning-button variant="brand" label={labelText} onclick={handleSaveGoal}></lightning-button>
+                    </div>
+                </div>
+            </template>
+            <br>
+            <template if:true={goals.length}>
+                <div class="goal-list">
+                    <template for:each={goals} for:item="goal" for:index="index">
+                        <div key={goal.title} class="goal-card">
+                            <h3>{goal.title}</h3>
+                            <p><strong>Start:</strong> {goal.startDate}</p>
+                            <p><strong>End:</strong> {goal.endDate}</p>
+                            <p><strong>Daily Commitment:</strong> {goal.dailyTime} min</p>
+    
+                            <lightning-progress-bar value={goal.progress} size="medium"></lightning-progress-bar>
+                            <lightning-input type="range" min="0" max="100" value={goal.progress} label="Update Progress" data-index={index} onchange={handleProgressChange}></lightning-input>
+    
+                            <div class="goal-actions">
+                                <lightning-button variant="neutral" label="Edit" data-index={index} onclick={handleEditGoal}></lightning-button>
+                                <lightning-button variant="destructive" label="Delete" data-index={index} onclick={handleDeleteGoal}></lightning-button>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,27 @@
+<template>
+    <div class="overlay3" onclick={handleClickOutside}></div> <!-- Click outside to close -->
+    <div class="search-container">
+        <button class="close-button" onclick={closeSearch}>&times;</button> <!-- Close Button -->
+
+        <div class="search-bar">
+            <select class="search-dropdown" onchange={handleCategoryChange} style="color:black">
+                <option value="all">Search in</option>
+                <option value="videos">Videos</option>
+                <option value="lectures">Lectures</option>
+                <option value="quizzes">Quizzes</option>
+                <option value="friends">Friends</option>
+                <option value="feed">Feed</option>
+                <option value="hackathons">Hackathons</option>
+            </select>
+            <input type="text" class="search-input" placeholder="Search..." oninput={handleSearch} />
+        </div>
+
+        <ul class="search-results">
+            <template for:each={searchResults} for:item="result">
+                <li key={result} class="search-item" onclick={navigateToPage} data-name={result}>
+                    {result}
+                </li>
+            </template>
+        </ul>
+    </div>
+</template>

@@ -1,0 +1,106 @@
+.unlock-access-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 32px;
+    padding: 24px;
+    background: linear-gradient(to right, #e3f2fd, #bbdefb);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.unlock-access-title {
+    font-size: 24px;
+    color: #1565c0;
+    margin-bottom: 16px;
+}
+
+.unlock-access-description {
+    font-size: 16px;
+    color: #37474f;
+    margin-bottom: 24px;
+    max-width: 600px;
+    margin: 0 auto 24px;
+}
+
+.button-container {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.signup-button {
+    padding: 12px 24px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.signup-button:hover {
+    background: #1976d2;
+}
+
+.login-button {
+    padding: 12px 24px;
+    background: transparent;
+    color: #2196f3;
+    border: 2px solid #2196f3;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.login-button:hover {
+    background: rgba(33, 150, 243, 0.1);
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    opacity: 0.7;
+}
+
+.preview-card {
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.preview-card h3 {
+    font-size: 16px;
+    color: #424242;
+    margin-bottom: 8px;
+}
+
+.preview-card p {
+    font-size: 14px;
+    color: #757575;
+}
+
+@media (max-width: 991px) {
+    .preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .button-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
+}

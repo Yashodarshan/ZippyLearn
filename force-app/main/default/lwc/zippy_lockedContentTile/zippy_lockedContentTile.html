@@ -1,0 +1,38 @@
+<template>
+    <div class="tile">
+        <div class="tile-header">
+            <span class="premium-badge">Premium Course</span>
+            <span class="points-badge">{userPoints} Points</span>
+        </div>
+
+        <div class="content">
+            <h2>Deep Learning Mastery</h2>
+            <p>Learn the fundamentals of deep learning, neural networks, and AI.</p>
+            
+            <template if:true={isLocked}>
+                <div class="lock-overlay">
+                    <span class="lock-icon">&#128274;</span>
+                    <p class="lock-text">This content is locked</p>
+                    <button class="redeem-btn" onclick={openRedeemModal}>Unlock with 2500 Points</button>
+                </div>
+            </template>
+
+            <template if:false={isLocked}>
+                <p class="unlocked-text">✅ Course Activated! Start Learning Now.</p>
+            </template>
+        </div>
+    </div>
+
+    <!-- Redeem Confirmation Modal -->
+    <template if:true={showRedeemModal}>
+        <div class="modal-overlay" onclick={closeModal}></div>
+        <div class="modal">
+            <h2>Redeem Points?</h2>
+            <p>You have <strong>{userPoints} points</strong>. This will cost <strong>2500 points</strong>.</p>
+            <div class="modal-actions">
+                <button class="confirm-btn" onclick={redeemCourse}>Yes, Redeem</button>
+                <button class="cancel-btn close-btn" onclick={closeModal}>Cancel</button>
+            </div>
+        </div>
+    </template>
+</template>

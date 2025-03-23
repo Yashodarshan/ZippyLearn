@@ -1,0 +1,69 @@
+<template>
+    <div class="quiz-container">
+        <h2>📝 Available Quizzes</h2>
+
+        <div class="quiz-grid">
+            <template for:each={quizzes} for:item="quiz">
+                <div key={quiz.id} class="quiz-card" data-id={quiz.id}>
+                    <h3>{quiz.name}</h3>
+                    <p>{quiz.description}</p>
+                    <button class="invite-btn" onclick={openInviteModal} data-id={quiz.id}>
+                        Invite a Friend
+                    </button>
+                    <br>
+                     <!-- Display invited friends list -->
+                    <template if:true={quiz.invitedFriends.length}>
+                        <div class="invited-list">
+                            <p>Invited Friends (Awaiting Response):</p>
+                            <ul>
+                                <template for:each={quiz.invitedFriends} for:item="friend">
+                                    <li key={friend.id}>{friend.name} - <span class="awaiting-text">Awaiting Acceptance</span></li>
+                                </template>
+                            </ul>
+                        </div>
+                    </template>
+                    <br>
+                    <button class="invite-btn" onclick={handleQuizClick} data-id={quiz.id}>
+                        Start Quiz
+                    </button>
+                </div>
+            </template>
+        </div>
+        
+        <!-- Modal for inviting friends -->
+        <template if:true={isModalOpen}>
+            <div class="modal-overlay" onclick={closeInviteModal}></div>
+            <div class="modal">
+                <h2>Select Friends to Invite</h2>
+                <ul>
+                    <template for:each={friendsList} for:item="friend">
+                        <li key={friend.id} class="friend-item">
+                            <span>{friend.name}</span>
+                            <template lwc:if={friend.invited}>
+                                <span class="blue-check">&#9989;</span>
+                            </template>
+                            <template lwc:else>
+                                <button class="invite-btn-modal" data-id={friend.id} onclick={inviteFriend}>
+                                    +
+                                </button>
+                            </template>
+                        </li>
+                    </template>
+                </ul>
+                <button class="close-btn" onclick={closeInviteModal}>&times;</button>
+            </div>
+        </template>
+
+        <template if:true={selectedQuiz}>
+            <div class="quiz-modal">
+                <div class="quiz-content">
+                    <h2>{selectedQuiz.name}</h2>
+                    <p>{selectedQuiz.description}</p>
+                    <p><strong>Questions:</strong> {selectedQuiz.questionCount}</p>
+                    <button class="start-button" onclick={startQuiz}>Start Quiz</button> &nbsp;&nbsp;
+                    <button class="close-button" onclick={closeQuiz}>Close</button>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

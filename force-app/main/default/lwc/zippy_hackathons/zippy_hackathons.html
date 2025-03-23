@@ -1,0 +1,56 @@
+<template>
+    <div class="hackathon-container">
+        <h1>🔥 Hackathon Hub - Compete & Conquer!</h1>
+
+        <!-- Register as Solo or Clan -->
+        <div class="registration-section">
+            <h2>Register Now</h2>
+            <input type="text" placeholder="Enter Your Name" value={userName} oninput={handleUserNameChange} />
+            <select onchange={handleRegisterTypeChange}>
+                <option value="solo">Register as Individual</option>
+                <option value="clan">Register a Clan</option>
+            </select>
+            <template if:true={isClan}>
+                <input type="text" placeholder="Clan Name" value={clanName} oninput={handleClanNameChange} />
+                <button onclick={addClanMember}>Add Member</button>
+                <ul>
+                    <template for:each={clanMembers} for:item="member">
+                        <li key={member.id}>{member.name}</li>
+                    </template>
+                </ul>
+            </template>
+            <button class="register-button" onclick={registerUser}>Register</button>
+        </div>
+
+        <!-- Available Hackathons -->
+        <div class="hackathon-list">
+            <h2>🚀 Upcoming Hackathons</h2>
+            <div class="grid">
+                <template for:each={hackathons} for:item="hackathon">
+                    <div key={hackathon.id} class="hackathon-card">
+                        <h3>{hackathon.title}</h3>
+                        <p>{hackathon.description}</p>
+                        <span>{hackathon.date} | {hackathon.type}</span>
+                        <template lwc:if={hackathon.join}>
+                            <button class="join-hackathon" style="float: right" data-id={hackathon.id} onclick={joinHackathon}>Join</button>
+                        </template>
+                        <template lwc:else>
+                            <button class="join-hackathon" style="float: right" data-id={hackathon.id} onclick={showMaps}>See Maps</button>
+                        </template>
+                        
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- Registered Participants -->
+        <div class="registered-section">
+            <h2>🏅 Registered Participants</h2>
+            <ul>
+                <template for:each={registeredParticipants} for:item="participant">
+                    <li key={participant.id}>{participant.name} ({participant.type})</li>
+                </template>
+            </ul>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,84 @@
+.leaderboard-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.leaderboard-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.leaderboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #f5f9ff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.leaderboard-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(33, 150, 243, 0.12);
+}
+
+.rank {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2196f3;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #2196f3;
+}
+
+.leader-info {
+    flex-grow: 1;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.achievement {
+    font-size: 14px;
+    color: #757575;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #2196f3;
+    transition: width 0.5s ease-in-out;
+}
+
+.points {
+    font-weight: bold;
+    font-size: 16px;
+    color: #424242;
+}
