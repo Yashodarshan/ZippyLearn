@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Personalized Dashboard",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"13a9ce67-2117-4823-b4cd-b33fcb92b2e2\",\"columns\":[{\"UUID\":\"210dfbf8-742d-4419-bea9-fff2346732e9\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:zippy_dashboard",
+              "id" : "d0b31be8-6092-4346-97c3-5043d0cc7e97",
+              "type" : "component"
+            } ],
+            "id" : "210dfbf8-742d-4419-bea9-fff2346732e9",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "13a9ce67-2117-4823-b4cd-b33fcb92b2e2",
+          "type" : "component"
+        } ],
+        "id" : "53e1d228-5c39-4172-b07e-926d7abcf64a",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Personalized Dashboard",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "3d2e28c7-eede-48a8-bf8f-e00a571dcbf5",
+          "type" : "component"
+        } ],
+        "id" : "b29d96f5-63b6-41fb-bb9b-e538a7e36957",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "ad2b4027-6b96-462f-8bfa-ccee489a9c27",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-personalized-dashboard"
+  },
+  "urlName" : "personalized-dashboard"
+}

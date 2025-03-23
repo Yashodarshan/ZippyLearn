@@ -1,0 +1,20 @@
+{
+  "type" : "sfdc_cms__trustedSites",
+  "title" : "trustedSites",
+  "contentBody" : {
+    "trustedSites" : [ {
+      "isActive" : true,
+      "source" : "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js",
+      "sourceName" : "cdn.mxpnl.com"
+    }, {
+      "isActive" : true,
+      "source" : "https://sites.google.com",
+      "sourceName" : "Google sites"
+    }, {
+      "isActive" : true,
+      "source" : "https://api-js.mixpanel.com",
+      "sourceName" : "https://api-js.mixpanel.com"
+    } ]
+  },
+  "urlName" : "trustedsites"
+}
